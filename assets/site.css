@@ -1,0 +1,571 @@
+/* Many Games Studio - shared styles for the landing page, the game pages and their privacy policies */
+
+:root {
+    color-scheme: dark;
+    --bg: #0f1116;
+    --bg-glow: rgba(110, 140, 255, 0.10);
+    --surface: #171a22;
+    --surface-raised: #1d212b;
+    --line: #2a2f3b;
+    --text: #eceef3;
+    --muted: #a4aab7;
+    --accent: #8aa8ff;
+    --accent-ink: #0f1116;
+    --radius: 18px;
+    --radius-small: 12px;
+    --page: 68rem;
+    --display: "Righteous", system-ui, sans-serif;
+    --body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Each game page takes on its game's colors */
+.theme-hanoi {
+    --bg: #0a0f21;
+    --bg-glow: rgba(70, 110, 255, 0.16);
+    --surface: #111833;
+    --surface-raised: #17203f;
+    --line: #26305a;
+    --accent: #7c9bff;
+}
+
+.theme-farmer {
+    --bg: #0e1512;
+    --bg-glow: rgba(120, 200, 90, 0.12);
+    --surface: #15201b;
+    --surface-raised: #1b2922;
+    --line: #2a3a31;
+    --accent: #f8b22c;
+    --accent-ink: #3b230f;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(70rem 40rem at 50% -10rem, var(--bg-glow), transparent 70%), var(--bg);
+    color: var(--text);
+    font: 17px/1.65 var(--body);
+    min-height: 100vh;
+}
+
+img, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--accent);
+    text-underline-offset: 0.2em;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+h1, h2, h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.1rem);
+    margin: 0 0 1rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.wrap {
+    width: min(100% - 2rem, var(--page));
+    margin-inline: auto;
+}
+
+/* ---- Header and footer ---- */
+
+.site-header {
+    padding: 1.1rem 0;
+}
+
+.site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.site-header .site-header--end {
+    justify-content: flex-end;
+}
+
+.site-header__logo img {
+    height: 2.6rem;
+    width: auto;
+}
+
+.site-nav {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.site-nav a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.site-nav a:hover {
+    color: var(--text);
+}
+
+.site-footer {
+    margin-top: 5rem;
+    padding: 2rem 0 3rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.site-footer .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+}
+
+.site-footer a {
+    color: var(--muted);
+}
+
+.site-footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Landing page ---- */
+
+.intro {
+    padding: 4rem 0 3.5rem;
+    text-align: center;
+}
+
+.intro__logo {
+    width: min(30rem, 88%);
+    margin: 0 auto 1.75rem;
+}
+
+.intro p {
+    max-width: 36rem;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 1.5rem;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.game-card__art {
+    aspect-ratio: 1024 / 500;
+    width: 100%;
+    object-fit: cover;
+}
+
+.game-card__body {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem 1.4rem 1.5rem;
+}
+
+.game-card__icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 22%;
+    flex: none;
+    margin-top: -2.9rem;
+    border: 3px solid var(--surface);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.game-card h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.45rem;
+}
+
+.game-card p {
+    margin: 0 0 0.9rem;
+    color: var(--muted);
+}
+
+.game-card__more {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ---- Status pills and buttons ---- */
+
+.pill {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-right: 0.6rem;
+    vertical-align: middle;
+}
+
+.pill--live {
+    background: rgba(70, 200, 120, 0.15);
+    color: #7fe0a4;
+}
+
+.pill--soon {
+    background: rgba(248, 178, 44, 0.15);
+    color: #f8c45c;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.4rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 700;
+    text-decoration: none;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.button svg {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.button--quiet {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line);
+}
+
+/* ---- Game pages ---- */
+
+.game-hero {
+    padding-top: 1rem;
+}
+
+.game-hero__art {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.game-hero__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 1.5rem;
+    margin-top: -3rem;
+    padding: 0 1.5rem;
+    position: relative;
+}
+
+.game-hero__icon {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 22%;
+    border: 4px solid var(--bg);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.game-hero__text {
+    flex: 1 1 18rem;
+    padding-top: 3rem;
+}
+
+.game-hero h1 {
+    font-size: clamp(2.2rem, 1.5rem + 2.6vw, 3.4rem);
+    margin: 0 0 0.3rem;
+}
+
+.game-hero__tagline {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.12rem;
+}
+
+.game-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    margin-top: 1.1rem;
+}
+
+.game-hero__note {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* The game names, lettered the way the games letter them */
+.title-hanoi .chaos {
+    background: linear-gradient(90deg, #ff6a4d, #ffb31a, #3fe07a, #2fd6ef, #e06cf0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.title-farmer {
+    color: #ffd25e;
+    text-shadow:
+        2px 0 0 #4a2e1e, -2px 0 0 #4a2e1e, 0 2px 0 #4a2e1e, 0 -2px 0 #4a2e1e,
+        2px 2px 0 #4a2e1e, -2px 2px 0 #4a2e1e, 2px -2px 0 #4a2e1e, -2px -2px 0 #4a2e1e,
+        3px 5px 0 #34200f;
+}
+
+.section {
+    margin-top: 4.5rem;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 2rem 3rem;
+}
+
+.about p {
+    margin: 0 0 1rem;
+}
+
+.features {
+    list-style: none;
+    margin: 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.features li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin: 0.55rem 0;
+}
+
+.features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.lead {
+    color: var(--muted);
+    margin: -0.4rem 0 1.5rem;
+}
+
+/* Screenshots: four across on a wide screen, a row to swipe through on a phone */
+.shots {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.shots a {
+    display: block;
+    border-radius: var(--radius-small);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.shots a:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.shots figcaption {
+    margin-top: 0.55rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+.shots figure {
+    margin: 0;
+}
+
+/* The intro clip, portrait like the phone it was made for, with what it shows beside it */
+.film {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    gap: 2rem 3rem;
+    align-items: center;
+}
+
+.film video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: #000;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.film p {
+    margin: 0 0 1rem;
+}
+
+.privacy {
+    padding: 1.6rem 1.8rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.privacy h2 {
+    margin-bottom: 0.6rem;
+}
+
+.privacy p {
+    margin: 0 0 0.9rem;
+    color: var(--muted);
+}
+
+.privacy p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---- Privacy policy pages ---- */
+
+.policy {
+    max-width: 44rem;
+    margin-inline: auto;
+}
+
+.policy__back {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.policy h1 {
+    font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.6rem);
+    margin: 0 0 0.3rem;
+}
+
+.policy h2 {
+    font-size: 1.3rem;
+    margin: 2.4rem 0 0.6rem;
+}
+
+.policy .updated {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-top: 0;
+}
+
+.policy li {
+    margin: 0.4rem 0;
+}
+
+/* ---- Narrow screens ---- */
+
+@media (max-width: 52rem) {
+    .about, .film {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .film video {
+        width: min(22rem, 100%);
+        margin-inline: auto;
+    }
+
+    .shots {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 0.75rem;
+    }
+
+    .shots li {
+        flex: 0 0 58%;
+        scroll-snap-align: start;
+    }
+
+    .game-hero__head {
+        margin-top: -2rem;
+        padding: 0 0.5rem;
+    }
+
+    .game-hero__icon {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    .game-hero__text {
+        padding-top: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}

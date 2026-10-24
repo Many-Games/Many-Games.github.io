@@ -3,32 +3,72 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Many-Games studio creates a series of independent games, built on a proprietary graphics engine.">
-    <title>Many-Games Studio</title>
-    <style>
-        body {
-            font-family: system-ui, sans-serif;
-            background: #808080;
-            color: #1f2328;
-            max-width: 60rem;
-            margin: 0 auto;
-            padding: 4rem 1rem;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        h1 {
-            margin-top: 0;
-        }
-
-        a {
-            color: #2b5fa8;
-        }
-    </style>
+    <title>Many Games Studio</title>
+    <meta name="description" content="Many Games Studio creates a series of independent games, built on a proprietary graphics engine.">
+    <meta property="og:title" content="Many Games Studio">
+    <meta property="og:description" content="Independent games, built on our own graphics engine: Hanoi Tower Chaos and Farmer Jacob.">
+    <meta property="og:image" content="https://many-games.github.io/hanoi-tower-chaos/images/feature.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap">
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-    <h1>Many-Games Studio</h1>
-    <p>Many-Games studio creates a series of independent games, built on a proprietary graphics engine.</p>
-    <p>Contact: <a href="mailto:chaosframework@gmail.com">chaosframework@gmail.com</a></p>
+    <header class="site-header">
+        <div class="wrap site-header--end">
+            <nav class="site-nav" aria-label="Main">
+                <a href="#games">Games</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro wrap">
+            <h1 class="visually-hidden">Many Games Studio</h1>
+            <img class="intro__logo" src="assets/many-games-logo.png" alt="" width="672" height="203">
+            <p>An independent studio making a series of games for phones and PCs, every one of them built on our own graphics engine.</p>
+        </section>
+
+        <section class="wrap" id="games" aria-labelledby="games-title">
+            <h2 id="games-title">Our games</h2>
+            <div class="games">
+                <a class="game-card theme-hanoi" href="hanoi-tower-chaos/">
+                    <img class="game-card__art" src="hanoi-tower-chaos/images/feature.png" alt="" width="1024" height="500">
+                    <div class="game-card__body">
+                        <img class="game-card__icon" src="hanoi-tower-chaos/images/icon.png" alt="" width="512" height="512">
+                        <div>
+                            <h3><span class="title-hanoi">Hanoi Tower <span class="chaos">Chaos</span></span></h3>
+                            <p>The classic Tower of Hanoi, scrambled into 80 colorful sorting puzzles.</p>
+                            <span class="pill pill--live">On Google Play</span>
+                            <span class="game-card__more">See the game &rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="game-card theme-farmer" href="farmer-jacob/">
+                    <img class="game-card__art" src="farmer-jacob/images/feature.png" alt="" width="1024" height="500">
+                    <div class="game-card__body">
+                        <img class="game-card__icon" src="farmer-jacob/images/icon.png" alt="" width="512" height="512">
+                        <div>
+                            <h3>Farmer Jacob</h3>
+                            <p>Grow one avocado tree into a farm, a business, and a whole neighborhood.</p>
+                            <span class="pill pill--soon">Coming soon</span>
+                            <span class="game-card__more">See the game &rarr;</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="wrap">
+            <p>Contact: <a href="mailto:chaosframework@gmail.com">chaosframework@gmail.com</a></p>
+            <p>&copy; 2026 Many Games Studio</p>
+        </div>
+    </footer>
 </body>
 </html>
