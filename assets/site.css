@@ -38,6 +38,16 @@
     --accent-ink: #3b230f;
 }
 
+.theme-beam {
+    --bg: #12140c;
+    --bg-glow: rgba(200, 220, 120, 0.10);
+    --surface: #1b1e12;
+    --surface-raised: #222617;
+    --line: #333a22;
+    --accent: #f5c94e;
+    --accent-ink: #2a2208;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -371,6 +381,15 @@ h2 {
         2px 2px 0 #4a2e1e, -2px 2px 0 #4a2e1e, 2px -2px 0 #4a2e1e, -2px -2px 0 #4a2e1e,
         3px 5px 0 #34200f;
 }
+
+.title-beam {
+    color: #fffbef;
+    text-shadow: 0 0 14px rgba(255, 250, 230, 0.45);
+}
+
+.title-beam .r { color: #ff6b62; text-shadow: 0 0 14px rgba(255, 90, 80, 0.55); }
+.title-beam .g { color: #5ee67f; text-shadow: 0 0 14px rgba(80, 230, 120, 0.55); }
+.title-beam .b { color: #6fa2ff; text-shadow: 0 0 14px rgba(90, 140, 255, 0.55); }
 
 .section {
     margin-top: 4.5rem;
