@@ -48,6 +48,16 @@
     --accent-ink: #2a2208;
 }
 
+.theme-kintsugi {
+    --bg: #140d09;
+    --bg-glow: rgba(232, 150, 80, 0.13);
+    --surface: #1f150f;
+    --surface-raised: #271b13;
+    --line: #3d2b1f;
+    --accent: #e8b858;
+    --accent-ink: #2b1a0b;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -390,6 +400,15 @@ h2 {
 .title-beam .r { color: #ff6b62; text-shadow: 0 0 14px rgba(255, 90, 80, 0.55); }
 .title-beam .g { color: #5ee67f; text-shadow: 0 0 14px rgba(80, 230, 120, 0.55); }
 .title-beam .b { color: #6fa2ff; text-shadow: 0 0 14px rgba(90, 140, 255, 0.55); }
+
+/* Cream letters mended with a seam of gold, like the game's logo. The box hugs the word so the seam crosses every letter */
+.title-kintsugi {
+    width: fit-content;
+    background: linear-gradient(178deg, #f6ecd6 0 55%, #e8b858 55% 59%, #f6ecd6 59%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 
 .section {
     margin-top: 4.5rem;
